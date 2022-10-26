@@ -1,0 +1,9 @@
+---
+version: 2
+updates:
+- package-ecosystem: "gomod"
+  directory: "/app_go"
+  open-pull-requests-limit: 20
+- package-ecosystem: "npm"
+  directory: "/app_node"
+  open-pull-requests-limit: 20
