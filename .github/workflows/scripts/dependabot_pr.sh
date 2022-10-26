@@ -36,8 +36,12 @@ done
 cd app_go && go mod tidy
 
 git add --all
-git commit -m "dependabot updates $(date)
-$message"
-git push origin "$PR_NAME"
+if [ -z "$(git status --porcelain)" ]; then
+    echo "clean state"
+else
+    git commit -m "dependabot updates $(date)
+    $message"
+    git push origin "$PR_NAME"
 
-gh pr create --title "[chore] dependabot updates $(date)" --body "$message" -l "dependencies"
+    gh pr create --title "[chore] dependabot updates $(date)" --body "$message" -l "dependencies"
+fi
