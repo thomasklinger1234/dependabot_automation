@@ -4,6 +4,18 @@ updates:
 - package-ecosystem: "gomod"
   directory: "/app_go"
   open-pull-requests-limit: 20
+  schedule:
+    # Check for updates to GitHub Actions every weekday
+    interval: "daily"
 - package-ecosystem: "npm"
   directory: "/app_node"
   open-pull-requests-limit: 20
+  schedule:
+    # Check for updates to GitHub Actions every weekday
+    interval: "daily"
+- package-ecosystem: "github-actions"
+  directory: "/"
+  open-pull-requests-limit: 20
+  schedule:
+    # Check for updates to GitHub Actions every weekday
+    interval: "daily"
