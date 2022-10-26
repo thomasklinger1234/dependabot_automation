@@ -33,7 +33,7 @@ for line in $requests; do
     message+=$'\n'
 done
 
-make gotidy
+cd app_go && go mod tidy
 
 git add --all
 git commit -m "dependabot updates $(date)
